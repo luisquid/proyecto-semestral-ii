@@ -242,8 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68154c5964c61f42b9f440e5c2eb256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaculo: {fileID: 5906657824066026151, guid: 7550b9faf31bdc448bdafd62503e27ab,
-    type: 3}
+  obstaculos:
+  - {fileID: 5906657824066026151, guid: 7550b9faf31bdc448bdafd62503e27ab, type: 3}
+  - {fileID: 5906657824066026151, guid: 5ce68e9307aed974b97acfb84016c9d5, type: 3}
+  - {fileID: 5906657824066026151, guid: 33c9bc662bd8a794ba134eff0366111c, type: 3}
   frecuencia: 1
 --- !u!4 &966205820
 Transform:

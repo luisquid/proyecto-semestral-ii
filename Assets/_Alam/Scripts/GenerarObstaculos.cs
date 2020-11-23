@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenerarObstaculos : MonoBehaviour
 {
-	public GameObject obstaculo;
+	public GameObject[] obstaculos;
 	public float frecuencia;
 	private float temporizador;
 	private Vector2 posicionObstaculo;
@@ -24,7 +24,8 @@ public class GenerarObstaculos : MonoBehaviour
 		if(temporizador <= 0f)
 		{
 			posicionObstaculo.x = Random.Range(-3.0f, 3.0f);
-			Instantiate(obstaculo, posicionObstaculo, Quaternion.identity);
+			int randObst = Random.Range(0, obstaculos.Length);
+			Instantiate(obstaculos[randObst], posicionObstaculo, Quaternion.identity);
 			temporizador = frecuencia;
 		}
     }
