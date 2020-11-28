@@ -10,12 +10,11 @@ public class MoverObstaculo : MonoBehaviour
     void Start()
     {
 	    rb = GetComponent<Rigidbody2D>();
-	    rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al obstáculo
     }
 
-    void Update()
+	void FixedUpdate()
 	{
-    	
+		rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al obstáculo
 	}
     
 	void OnTriggerEnter2D(Collider2D other)

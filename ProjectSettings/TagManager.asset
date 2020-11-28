@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Borde
   - Wall
+  - Recompensa
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
