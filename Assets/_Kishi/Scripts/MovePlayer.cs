@@ -15,18 +15,21 @@ public class MovePlayer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-	    
+	{
+    	
     }
+	
     
 	public void MovePlayerLeft()
 	{
 		rb.velocity = new Vector2(moveNegative, 0);
+		Debug.Log("Izquieda");
 	}
 	
 	public void MovePlayerRight()
 	{
 		rb.velocity = new Vector2(movePositive, 0);
+		Debug.Log("Derecha");
 	}
 	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -34,6 +37,10 @@ public class MovePlayer : MonoBehaviour
 		if(collisionInfo.gameObject.CompareTag("Wall")){
 			rb.velocity = new Vector2(0, 0);
 		}
+		if(collisionInfo.gameObject.CompareTag("Obstaculo")){
+			Destroy(this.gameObject);
+		}
 	}
+	
 }
 
