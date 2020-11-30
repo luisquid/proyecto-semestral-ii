@@ -9,7 +9,7 @@ public class puntos : MonoBehaviour
     private TextMeshProUGUI Marcadordepuntos;
     public  TextMeshProUGUI timeloco;
     public GameObject holis;
-    int Puntoslocos = 0;
+    public int Puntoslocos = 0;
     float Tiempoloco;
     int tiempoanterior;
 
@@ -49,4 +49,8 @@ public class puntos : MonoBehaviour
     {
         GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)Tiempoloco).ToString();
     }
+
+
+
+
 }

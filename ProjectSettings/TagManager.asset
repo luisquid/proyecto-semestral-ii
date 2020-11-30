@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Borde
   - Wall
-  - Recompensa
   - Obstaculo
+  - Recompensa_20
+  - Recompensa_10
+  - Deuda_5
   layers:
   - Default
   - TransparentFX
