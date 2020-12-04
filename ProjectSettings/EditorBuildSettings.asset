@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Kishi/Scenes/Menu.unity
+    guid: cf9a57498629522469b8cf95f75441ed
+  - enabled: 1
+    path: Assets/_Kishi/Scenes/Store.unity
+    guid: d3ae67e3f81dca84493e4577a694acd2
+  - enabled: 1
+    path: Assets/_Alam/Scenes/Game.unity
+    guid: 645bad70c60a1634eb136d1437214aab
+  - enabled: 1
+    path: Assets/_Kishi/Scenes/Credits.unity
+    guid: 2c6b92da8bd04d3428a2f397805aec2f
   m_configObjects: {}

@@ -239,6 +239,7 @@ MonoBehaviour:
   rb: {fileID: 501516853}
   moveNegative: -5
   movePositive: 5
+  puntosTxt: {fileID: 0}
 --- !u!50 &501516853
 Rigidbody2D:
   serializedVersion: 4
@@ -445,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &936311504
 AudioListener:
   m_ObjectHideFlags: 0
