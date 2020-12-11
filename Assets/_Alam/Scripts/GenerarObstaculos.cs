@@ -17,16 +17,19 @@ public class GenerarObstaculos : MonoBehaviour
     }
 
 	//Update chido
-    void Update()
+	void Update()
 	{
-		temporizador -= Time.deltaTime; //Disminuye el temporizador
-		//Cuando el temporizador llega a 0 se generará un objeto
-		if(temporizador <= 0f)
+		if (Evento.evento == false)
 		{
-			posicionObstaculo.x = Random.Range(-3.0f, 3.0f); //Coordenada en X donde se va a generar
-			int randObst = Random.Range(0, obstaculos.Length); //Elige un objeto del array para generarlo
-			Instantiate(obstaculos[randObst], posicionObstaculo, Quaternion.identity); //Instancía el objeto
-			temporizador = frecuencia; //Reinicia el contador
+			temporizador -= Time.deltaTime; //Disminuye el temporizador
+											//Cuando el temporizador llega a 0 se generará un objeto
+			if (temporizador <= 0f)
+			{
+				posicionObstaculo.x = Random.Range(-3.0f, 3.0f); //Coordenada en X donde se va a generar
+				int randObst = Random.Range(0, obstaculos.Length); //Elige un objeto del array para generarlo
+				Instantiate(obstaculos[randObst], posicionObstaculo, Quaternion.identity); //Instancía el objeto
+				temporizador = frecuencia; //Reinicia el contador
+			}
 		}
-    }
+	}
 }

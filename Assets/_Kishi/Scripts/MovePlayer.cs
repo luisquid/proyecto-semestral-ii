@@ -5,6 +5,7 @@ using TMPro;
 
 public class MovePlayer : MonoBehaviour
 {
+	
 	public Rigidbody2D rb;
 	public float moveNegative;
 	public float movePositive;
@@ -27,14 +28,19 @@ public class MovePlayer : MonoBehaviour
     
 	public void MovePlayerLeft()
 	{
-		rb.velocity = new Vector2(moveNegative, 0);
-		Debug.Log("Izquieda");
+		if (Evento.evento == false) {
+			rb.velocity = new Vector2(moveNegative, 0);
+			Debug.Log("Izquieda");
+		}
 	}
 	
 	public void MovePlayerRight()
 	{
-		rb.velocity = new Vector2(movePositive, 0);
-		Debug.Log("Derecha");
+		if (Evento.evento == false)
+		{
+			rb.velocity = new Vector2(movePositive, 0);
+			Debug.Log("Derecha");
+		}
 	}
 	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)

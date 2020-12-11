@@ -9,7 +9,7 @@ public class puntos : MonoBehaviour
     private TextMeshProUGUI Marcadordepuntos;
     public  TextMeshProUGUI timeloco;
     public GameObject holis;
-    public int Puntoslocos = 0;
+    public static int Puntoslocos = 0;
     float Tiempoloco;
     int tiempoanterior;
 

@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Sumarpuntos : MonoBehaviour
+
+public class Evento : MonoBehaviour
 {
-    GameObject Personaje;
-   
+    public static bool evento = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +18,15 @@ public class Sumarpuntos : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Recompensa_20")) 
+        if (collision.CompareTag("Player"))
         {
-            puntos.Puntoslocos += 20;
-            Destroy(collision.gameObject);
-        
+
+            evento = true;
+            SceneManager.LoadScene("Evento",LoadSceneMode.Additive);
+
+
         }
     }
-
-
 }

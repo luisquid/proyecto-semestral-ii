@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recompensas:
   - {fileID: 5168045746138140526, guid: d6676dd798671344ba51eaae42f682f1, type: 3}
+  - {fileID: 5168045746138140526, guid: 96c6f4fc4ec33f140ae4e98000543258, type: 3}
   frecuencia: 1
 --- !u!4 &28322867
 Transform:
@@ -219,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeloco: {fileID: 1432671424}
   holis: {fileID: 0}
-  Puntoslocos: 0
 --- !u!114 &292685561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,4 +1772,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee709aded27854a83a060449da9f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contantdor: {fileID: 292685560}

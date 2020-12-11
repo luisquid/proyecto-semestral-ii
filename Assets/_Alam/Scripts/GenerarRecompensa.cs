@@ -18,11 +18,14 @@ public class GenerarRecompensa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    temporizador -= Time.deltaTime; //Disminuye el temporizador
-	    if(temporizador <= 0f)
-	    {
-		    Generar();
-	    }
+		if (Evento.evento == false)
+		{
+			temporizador -= Time.deltaTime; //Disminuye el temporizador
+			if (temporizador <= 0f)
+			{
+				Generar();
+			}
+		}
     }
     
 	public void Generar(){

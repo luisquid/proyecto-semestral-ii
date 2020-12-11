@@ -15,7 +15,10 @@ public class MoverRecompensa : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al objeto
+		if (Evento.evento == false)
+		{
+			rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al objeto
+		}
 	}
     
 	void OnTriggerEnter2D(Collider2D other)

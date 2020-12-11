@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Taps : MonoBehaviour
 {
@@ -9,46 +11,65 @@ public class Taps : MonoBehaviour
     //crear un loop para dar taps hasta llevar a un tiempo deseado
 
     int contador; //para los taps
-    float tiempo; //para ser llenado
-    bool terminado; //condicional
+    public TextMeshProUGUI Marcadordetaps;
+    public float limite;
+    float Tiempoloco;
+    public TextMeshProUGUI Marcadortiempo;
 
     // Start is called before the first frame update
     void Start()
     {
         contador = 0;
-         terminado = false;
+        Marcadordetaps.text = contador.ToString();
+        Tiempoloco = limite;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         LoopDeTaps();
+        Tiempoloco -= Time.deltaTime;
+        mostrarTiempo();
 
     }
 
     public void LoopDeTaps()
     {
-        if(!terminado)
+
+        if (Tiempoloco <= 0f) //si ya pasaron dos segundos
         {
-            tiempo += Time.deltaTime;
-            
-            if(tiempo >= 2.0f) //si ya pasaron dos segundos
-            {
-                print("te moristes alv"); //muerte
-            }
-
-            if(Input.GetKeyDown(KeyCode.Space)) //reset tiempo y damos al contador +1
-            {
-                tiempo = 0.0f;
-                contador++;
-                print("llevas  " + contador + "  taps");
-            }
-
-            if(contador == 20) //condicion de salir del loop
-            {
-                terminado = true;
-                print("La libraste perro");
-            }
+            Fin();
         }
+        if(contador == 20) //condicion de salir del loop
+        {
+            Fin();
+            print("La libraste perro");
+        }
+        
     }
+
+    public void Tap()
+    {
+        contador++;
+        print("llevas  " + contador + "  taps");
+        Marcadordetaps.text = contador.ToString();
+
+    }
+
+    public void Fin() 
+    {
+        
+            Evento.evento = false;
+            SceneManager.UnloadSceneAsync("Evento");
+            puntos.Puntoslocos = puntos.Puntoslocos + contador;
+
+    }
+    void mostrarTiempo()
+    {
+        Marcadortiempo.text =  ((int)Tiempoloco).ToString();
+    }
+
 }
