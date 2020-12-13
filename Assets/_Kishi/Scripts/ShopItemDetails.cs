@@ -10,9 +10,11 @@ public class ShopItemDetails : MonoBehaviour
 	public int itemCost;
 	public bool comprado;
 	private ScripStore scriptStore;
+	public Sprite itemskin;
     // Start is called before the first frame update
     void Start()
 	{
+		GetComponentInChildren<Image>().sprite = itemskin;
 		scriptStore = FindObjectOfType<ScripStore>();
 	    GetComponentsInChildren<TextMeshProUGUI>()[0].text = itemName;
 	    GetComponentsInChildren<TextMeshProUGUI>()[1].text = itemCost + "";
@@ -40,5 +42,14 @@ public class ShopItemDetails : MonoBehaviour
 		else{
 			Debug.Log("No hay lana joven");
 		}
+	}
+
+	public void SelecSkin()
+	{
+
+		
+		GameManager.skin = GetComponentInChildren<Image>().sprite;
+
+
 	}
 }

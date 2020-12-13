@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Kishi/Scenes/Credits.unity
     guid: 2c6b92da8bd04d3428a2f397805aec2f
+  - enabled: 1
+    path: Assets/_Alam/Scenes/Evento.unity
+    guid: 245f0a9b76d6ced4eb519a5d778edefc
   m_configObjects: {}

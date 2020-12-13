@@ -11,6 +11,7 @@ TagManager:
   - Recompensa_10
   - Deuda_5
   - Evento
+  - GameManager
   layers:
   - Default
   - TransparentFX

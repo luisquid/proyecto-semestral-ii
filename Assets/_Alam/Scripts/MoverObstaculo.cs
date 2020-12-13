@@ -18,6 +18,10 @@ public class MoverObstaculo : MonoBehaviour
 		{
 			rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al obstáculo
 		}
+		else
+		{
+			rb.velocity = new Vector2(0, 0);
+		}
 	}
     
 	void OnTriggerEnter2D(Collider2D other)

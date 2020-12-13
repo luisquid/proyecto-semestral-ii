@@ -46,7 +46,6 @@ public class Taps : MonoBehaviour
         if(contador == 20) //condicion de salir del loop
         {
             Fin();
-            print("La libraste perro");
         }
         
     }
@@ -54,7 +53,6 @@ public class Taps : MonoBehaviour
     public void Tap()
     {
         contador++;
-        print("llevas  " + contador + "  taps");
         Marcadordetaps.text = contador.ToString();
 
     }
@@ -69,7 +67,7 @@ public class Taps : MonoBehaviour
     }
     void mostrarTiempo()
     {
-        Marcadortiempo.text =  ((int)Tiempoloco).ToString();
+        Marcadortiempo.text =  (Tiempoloco).ToString("#.00");
     }
 
 }

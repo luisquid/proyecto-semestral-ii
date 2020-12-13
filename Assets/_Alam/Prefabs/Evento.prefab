@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6127091431784365354}
   - component: {fileID: 8339357295694461741}
   m_Layer: 0
-  m_Name: Recompensa 1
+  m_Name: Evento
   m_TagString: Evento
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

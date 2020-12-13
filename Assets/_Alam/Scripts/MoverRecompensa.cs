@@ -15,9 +15,15 @@ public class MoverRecompensa : MonoBehaviour
 
 	void FixedUpdate()
 	{
+
+
 		if (Evento.evento == false)
 		{
 			rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al objeto
+		}
+		else
+		{
+			rb.velocity = new Vector2(0, 0);
 		}
 	}
     
@@ -41,7 +47,6 @@ public class MoverRecompensa : MonoBehaviour
 		//En caso de que se genere sobre un obstáculo
 		if(other.gameObject.CompareTag("Obstaculo")) 
 		{
-			Debug.Log("Me moví", gameObject);
 			transform.position = new Vector2(Random.Range(-3.0f, 3.0f), 10f); //Lo mueve a otra posición
 		}
 	}

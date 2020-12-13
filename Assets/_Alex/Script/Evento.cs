@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Evento : MonoBehaviour
 {
-    public static bool evento = true;
+    public static bool evento = false;
     // Start is called before the first frame update
     void Start()
     {
