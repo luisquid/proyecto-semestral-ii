@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -58,10 +59,17 @@ public class MovePlayer : MonoBehaviour
 		if(collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo")){
 
 			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text));
+			GameOver();
 			Destroy(this.gameObject);
+
 		}
 
 	}
-	
+
+	private void GameOver()
+	{
+		SceneManager.LoadScene("GameOver");
+	}
+
 }
 
