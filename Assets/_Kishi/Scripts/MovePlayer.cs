@@ -23,7 +23,7 @@ public class MovePlayer : MonoBehaviour
         if (GameManager.skin != null) 
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin;
 
-	    puntos = PlayerPrefs.GetInt("Puntos");
+	    puntos = 0;
     }
 
     // Update is called once per frame
