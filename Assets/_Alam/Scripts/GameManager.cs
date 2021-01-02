@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static Sprite skin;
+    public static Sprite skin; //Guarda la skin que el jugador tendrá a lo largo de las partidas
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     
 }

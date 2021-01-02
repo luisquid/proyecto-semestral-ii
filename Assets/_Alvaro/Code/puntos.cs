@@ -6,48 +6,45 @@ using TMPro;
 
 public class puntos : MonoBehaviour
 {
-    private TextMeshProUGUI Marcadordepuntos;
-    public  TextMeshProUGUI timeloco;
+    private TextMeshProUGUI marcadorDePuntos;
+    public  TextMeshProUGUI marcadorDeTiempo;
     public GameObject holis;
-    public static int Puntoslocos = 0;
-    float Tiempoloco;
+    public static int puntosLocos = 0;
+    float tiempoLoco;
     int tiempoanterior;
 
     void Start()
     {
-        Marcadordepuntos = GetComponent<TextMeshProUGUI>();
-        Tiempoloco += Time.deltaTime;
+        marcadorDePuntos = GetComponent<TextMeshProUGUI>();
+        tiempoLoco += Time.deltaTime;
         mostrarTiempo();
     }
 
     void Update()
     {
-        Tiempoloco += Time.deltaTime;
-        int tiemponuevo = (int)Tiempoloco;
+        tiempoLoco += Time.deltaTime;
+        int tiemponuevo = (int)tiempoLoco;
 
-        Marcadordepuntos.text = Puntoslocos.ToString();
+        marcadorDePuntos.text = puntosLocos.ToString();
 
         if (tiemponuevo != tiempoanterior) 
         {
 
-            timeloco.text = tiemponuevo.ToString();
+            marcadorDeTiempo.text = tiemponuevo.ToString();
             tiempoanterior = tiemponuevo;
-            Puntoslocos = Puntoslocos + 5;
+            puntosLocos = puntosLocos + 5;
 
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) 
         { 
-        
 
-        
         }
 
-           
     }
     void mostrarTiempo()
     {
-        GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)Tiempoloco).ToString();
+        GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)tiempoLoco).ToString();
     }
 
 

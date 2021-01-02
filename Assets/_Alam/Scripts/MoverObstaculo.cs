@@ -14,19 +14,20 @@ public class MoverObstaculo : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (Evento.evento == false)
+		//Si no hay un evento activo el objeto sigue en movimiento, sino, su velocidad es 0 en X y Y
+		if (!Evento.hayEvento)
 		{
 			rb.velocity = Vector2.down * velocidad; //Le da la velocidad de movimiento al obstáculo
 		}
 		else
 		{
-			rb.velocity = new Vector2(0, 0);
+			rb.velocity = Vector2.zero;
 		}
 	}
     
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.CompareTag("Borde")) //Revisa si ya llegó hasta abajo el obstáculo
+		if(other.gameObject.CompareTag("Borde")) //Revisa si ya llegó hasta abajo de la pantalla
 		{
 			Destroy(gameObject); //Destruir el obstáculo
 		}

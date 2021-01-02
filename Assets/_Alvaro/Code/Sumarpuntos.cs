@@ -22,7 +22,7 @@ public class Sumarpuntos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Recompensa_20")) 
         {
-            puntos.Puntoslocos += 20;
+            puntos.puntosLocos += 20;
             Destroy(collision.gameObject);
         
         }

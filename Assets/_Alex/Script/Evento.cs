@@ -6,27 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Evento : MonoBehaviour
 {
-    public static bool evento = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Guarda el valor "true" cuando hay un evento activo (Quick time event)
+    public static bool hayEvento = false; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Si el objeto colisiona con el jugador, entonces añade la escena que tiene el Quick Time Event
         if (collision.CompareTag("Player"))
         {
-
-            evento = true;
-            SceneManager.LoadScene("Evento",LoadSceneMode.Additive);
-
-
+            hayEvento = true;
+            SceneManager.LoadScene("Evento",LoadSceneMode.Additive); //Añade la escena del Evento
         }
     }
 }

@@ -11,35 +11,30 @@ public class Taps : MonoBehaviour
     //crear un loop para dar taps hasta llevar a un tiempo deseado
 
     int contador; //para los taps
-    public TextMeshProUGUI Marcadordetaps;
+    public TextMeshProUGUI marcadorDeTaps;
     public float limite;
-    float Tiempoloco;
-    public TextMeshProUGUI Marcadortiempo;
+    float tiempoLoco;
+    public TextMeshProUGUI marcadorDeTiempo;
 
     // Start is called before the first frame update
     void Start()
     {
         contador = 0;
-        Marcadordetaps.text = contador.ToString();
-        Tiempoloco = limite;
-
-
+        marcadorDeTaps.text = contador.ToString();
+        tiempoLoco = limite;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         LoopDeTaps();
-        Tiempoloco -= Time.deltaTime;
-        mostrarTiempo();
-
+        tiempoLoco -= Time.deltaTime;
+        MostrarTiempo();
     }
 
     public void LoopDeTaps()
     {
-
-        if (Tiempoloco <= 0f) //si ya pasaron dos segundos
+        if (tiempoLoco <= 0f) //si ya pasaron dos segundos
         {
             Fin();
         }
@@ -47,27 +42,24 @@ public class Taps : MonoBehaviour
         {
             Fin();
         }
-        
     }
 
     public void Tap()
     {
         contador++;
-        Marcadordetaps.text = contador.ToString();
-
+        marcadorDeTaps.text = contador.ToString();
     }
 
     public void Fin() 
     {
-        
-            Evento.evento = false;
-            SceneManager.UnloadSceneAsync("Evento");
-            puntos.Puntoslocos = puntos.Puntoslocos + contador;
-
+        Evento.hayEvento = false;
+        SceneManager.UnloadSceneAsync("Evento");
+        puntos.puntosLocos += contador;
     }
-    void mostrarTiempo()
+
+    void MostrarTiempo()
     {
-        Marcadortiempo.text =  (Tiempoloco).ToString("#.00");
+        marcadorDeTiempo.text =  (tiempoLoco).ToString("#.00");
     }
 
 }

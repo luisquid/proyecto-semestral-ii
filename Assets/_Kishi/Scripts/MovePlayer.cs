@@ -29,14 +29,14 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		if (Evento.evento == true)
+		if (Evento.hayEvento == true)
 			rb.velocity = new Vector2(0, 0);
 	}
 	
     
 	public void MovePlayerLeft()
 	{
-		if (Evento.evento == false)
+		if (Evento.hayEvento == false)
 		{
 			rb.velocity = new Vector2(moveNegative, 0);
 			
@@ -46,7 +46,7 @@ public class MovePlayer : MonoBehaviour
 	
 	public void MovePlayerRight()
 	{
-		if (Evento.evento == false)
+		if (Evento.hayEvento == false)
 		{
 			rb.velocity = new Vector2(movePositive, 0);
 			
