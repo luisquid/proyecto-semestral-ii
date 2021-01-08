@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Evento : MonoBehaviour
+public class Evento : MonoBehaviour //Alexander
 {
     //Guarda el valor "true" cuando hay un evento activo (Quick time event)
     public static bool hayEvento = false; 

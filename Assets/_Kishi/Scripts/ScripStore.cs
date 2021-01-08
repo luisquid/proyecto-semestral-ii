@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScripStore : MonoBehaviour
+public class ScripStore : MonoBehaviour //Kishi
 {
 	public Text textPointStore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,4 @@ public class ScripStore : MonoBehaviour
     {
         
     }
-
-    
-
-}
+}//end Class

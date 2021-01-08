@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
+using TMPro; //libreria para agregar GUI
+using UnityEngine.SceneManagement; //Libreria para manejo de escenas 
 
-public class MovePlayer : MonoBehaviour
+public class MovePlayer : MonoBehaviour //Kishi
 {
 	
 	public Rigidbody2D rb;
-	public float moveNegative;
+
+	public float moveNegative; //Para que dos variables??????
 	public float movePositive;
+
 	public TextMeshProUGUI puntosTxt;
+
 	public Sprite defull;
 	
 	private int puntos;
@@ -18,7 +21,7 @@ public class MovePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		GetComponent<SpriteRenderer>().sprite = defull;
+		GetComponent<SpriteRenderer>().sprite = defull; //Agregamos la imagen del personaje
 			
         if (GameManager.skin != null) 
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin;
@@ -49,27 +52,25 @@ public class MovePlayer : MonoBehaviour
 		if (Evento.hayEvento == false)
 		{
 			rb.velocity = new Vector2(movePositive, 0);
-			
 		}
 	}
+
 	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
-		//Si choca con las paredes, muere
-		if(collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo")){
-
-			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text));
+		   //Si choca con las paredes, muere
+		if(collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
+		{
+			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text)); //Guardamos partida
 			GameOver();
 			Destroy(this.gameObject);
-
 		}
-
 	}
 
-	private void GameOver()
+	private void GameOver() //cargamos la escena de muerte
 	{
 		SceneManager.LoadScene("GameOver");
 	}
 
-}
+}//end Class
 

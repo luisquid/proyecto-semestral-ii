@@ -3,26 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class tiempo : MonoBehaviour
+public class tiempo : MonoBehaviour //Alvaro
 {
-    float Tiempoloco;
+    float conteoTiempo;
 
-    private void Start()
-    {
-        
-    }
     void Update()
     {
-
-        Tiempoloco += Time.deltaTime;
+        conteoTiempo += Time.deltaTime;
         mostrarTiempo();
-        
     }
 
     void mostrarTiempo()
     {
-        GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)Tiempoloco).ToString();
+        GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)conteoTiempo).ToString();
     }
 
 
-}
+}//end class

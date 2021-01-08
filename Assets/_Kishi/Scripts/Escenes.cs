@@ -1,35 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; //Libreria para manejo de escenas 
 
-public class Escenes : MonoBehaviour
+public class Escenes : MonoBehaviour //Kishi
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-	public void abrirEscenaPlay() {
+	public void abrirGame() // public void abrirEscenaPlay()
+	{
 		SceneManager.LoadScene("Game");
 	}
 	
-	public void abrirCredits (){
+	public void abrirCredits()
+	{
 		SceneManager.LoadScene("Credits");
 	}
 	
-	public void abrirStore (){
+	public void abrirStore()
+	{
 		SceneManager.LoadScene("Store");
 	}
 	
-	public void abrirMenu (){
+	public void abrirMenu()
+	{
 		SceneManager.LoadScene("Menu");
 	}
 }

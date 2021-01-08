@@ -1,25 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using UnityEngine.UI; //Libreria para manejo de canvas
+using TMPro; 
 
-public class ShopItemDetails : MonoBehaviour
+public class ShopItemDetails : MonoBehaviour //Kishi
 {
 	public string itemName;
+
 	public int itemCost;
-	public bool comprado;
+
+	public bool bought; //ambiguo todo en ingles o español ando piki "bought" --> comprado
+
 	private ScripStore scriptStore;
-	public Sprite itemskin;
+
+	public Sprite itemSkin;
+
+
     // Start is called before the first frame update
     void Start()
 	{
-		GetComponentInChildren<Image>().sprite = itemskin;
+		GetComponentInChildren<Image>().sprite = itemSkin;
 		scriptStore = FindObjectOfType<ScripStore>();
 	    GetComponentsInChildren<TextMeshProUGUI>()[0].text = itemName;
 	    GetComponentsInChildren<TextMeshProUGUI>()[1].text = itemCost + "";
-	    comprado = PlayerPrefs.GetInt(itemName) == 1 ? true : false;
-	    if (comprado){
+	    bought = PlayerPrefs.GetInt(itemName) == 1 ? true : false;
+
+	    if (bought)
+		{
 	    	GetComponentInChildren<Button>().interactable = false;
 	    }
 	    // GetComponentInChildren<Button>().onClick.AddListener(() => TestAction());
@@ -28,28 +36,28 @@ public class ShopItemDetails : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if(Input.GetKeyDown(KeyCode.Space)){
+	    if(Input.GetKeyDown(KeyCode.Space))
+		{
 	    	PlayerPrefs.SetInt(itemName, 0);
 	    }
     }
-	public void ItemComprado(){
-		if(itemCost <= PlayerPrefs.GetInt("Puntos")){
+
+	public void ItemComprado()
+	{
+		if(itemCost <= PlayerPrefs.GetInt("Puntos"))
+		{
 			PlayerPrefs.SetInt(itemName, 1);
 			GetComponentInChildren<Button>().interactable = false;
 			PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") -itemCost);
 			scriptStore.textPointStore.text = PlayerPrefs.GetInt("Puntos") + "";
 		}
-		else{
+		else
 			Debug.Log("No hay lana joven");
-		}
+		
 	}
 
 	public void SelecSkin()
 	{
-
-		
 		GameManager.skin = GetComponentInChildren<Image>().sprite;
-
-
 	}
-}
+}//end Class
