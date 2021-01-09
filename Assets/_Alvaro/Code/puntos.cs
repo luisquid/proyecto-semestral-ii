@@ -9,19 +9,17 @@ public class Puntos : MonoBehaviour //Alvaro
     public TextMeshProUGUI marcadorDePuntos;
     public  TextMeshProUGUI marcadorDeTiempo;
 
-    public GameObject holis; //Que va llevar aqui?????? //Cambiar nombre
-
     public static int puntoCero = 0; //Nunca cambiara el valor
+    [HideInInspector]
+    public float conteoTiempo;
     int tiempoAnterior;
-
-    float conteoTiempo;
 
     void Start()
     {
         //marcadorDePuntos = GetComponent<TextMeshProUGUI>(); //ya que no se encontro por si solo
         conteoTiempo += Time.deltaTime; //llenamos el tiempo con a tiempo real
         mostrarTiempo(); //Hace un casteo del tiempo y lo imprime en un Text
-    }//end Start
+    }
 
     void Update()
     {
@@ -34,7 +32,7 @@ public class Puntos : MonoBehaviour //Alvaro
         {
             marcadorDeTiempo.text = tiempoNuevo.ToString();
             tiempoAnterior = tiempoNuevo;
-            puntoCero = puntoCero + 5;
+            puntoCero += puntoCero;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) 

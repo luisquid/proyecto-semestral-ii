@@ -12,6 +12,7 @@ TagManager:
   - Deuda_5
   - Evento
   - GameManager
+  - Contador
   layers:
   - Default
   - TransparentFX

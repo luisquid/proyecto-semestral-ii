@@ -11,14 +11,14 @@ public class GenerarRecompensa : MonoBehaviour
 	 */
 
 	public GameObject[] recompensas; //Array de todos los obstáculos que pueden generarse
-	public float frecuencia; //Con qué frecuencia aparecen los obstáculos
+	public float frecuenciaInicial; //Con qué frecuencia aparecen los obstáculos
 	private float temporizador; //Lleva la cuenta regresiva para saber si se debe de generar otro objeto
 	private Vector2 posicionRecompensa; //Posición donde se generará el obstáculo
 
 	void Start()
     {
 	    posicionRecompensa.y = 10f; //Altura a la que aparecen los objetos
-		temporizador = frecuencia; //Inicializar el temporizador
+		temporizador = frecuenciaInicial; //Inicializar el temporizador
 	}
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class GenerarRecompensa : MonoBehaviour
 			if (temporizador <= 0f)
 			{
 				Generar();
-				temporizador = frecuencia;
+				temporizador = Random.Range(10f, 25f);
 			}
 		}
         #endregion

@@ -18,7 +18,7 @@ public class GenerarEvento : MonoBehaviour
 	void Start()
 	{
 		posicionEvento.y = 10f; //Lo posiciona fuera de la pantalla, en la parte superior
-		temporizador = Random.Range(2.0f, 5.0f); //Inicializa el temporizador por primera vez (valor random)
+		temporizador = Random.Range(20f, 30f); //Inicializa el temporizador por primera vez (valor random)
 	}
 
 	// Update is called once per frame

@@ -11,17 +11,20 @@ public class GenerarObstaculos : MonoBehaviour
 	 */
 
 	public GameObject[] obstaculos; //Array de todos los obstáculos que pueden generarse
-	public float frecuencia; //Con qué frecuencia aparecen los obstáculos
 	private float temporizador; //Lleva la cuenta regresiva para saber si se debe de generar otro objeto
+	public float frecuenciaMinDeSpawn; //Con qué frecuencia aparecen los obstáculos
 	private Vector2 posicionObstaculo; //Posición donde se generará el obstáculo
-	
-    void Start()
+	private Puntos contadorTiempo; //Contiene el objeto que tiene el contador de puntos y tiempo
+	private float tiempoTranscurrido; //Guarda el tiempo transcurrido desde que se empieza la partida
+
+
+	void Start()
     {
-	    posicionObstaculo.y = 10f; //Altura a la que aparecen los objetos
-	    temporizador = frecuencia; //Inicializar el temporizador
+		posicionObstaculo.y = 10f; //Altura a la que aparecen los objetos
+		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<Puntos>(); //Encontrar el contador de puntos con el tag
+	    temporizador = Random.Range(frecuenciaMinDeSpawn, FrecuenciaMaxDeSpawn()); //Inicializar el temporizador
     }
 
-	//Update chido
 	void Update()
 	{
 		#region GENERAR EVENTO
@@ -34,7 +37,7 @@ public class GenerarObstaculos : MonoBehaviour
 			if (temporizador <= 0f)
 			{
 				Generar();
-				temporizador = frecuencia; //Reinicia el contador
+				temporizador = Random.Range(frecuenciaMinDeSpawn, FrecuenciaMaxDeSpawn()); //Reinicia el contador con un valor basado en el tiempo de juego
 			}
 		}
 		#endregion
@@ -46,5 +49,31 @@ public class GenerarObstaculos : MonoBehaviour
 		posicionObstaculo.x = Random.Range(-3.0f, 3.0f); //Coordenada en X donde se va a generar
 		int randObst = Random.Range(0, obstaculos.Length); //Elige un objeto del array para generarlo
 		Instantiate(obstaculos[randObst], posicionObstaculo, Quaternion.identity); //Instanciar el objeto
+	}
+
+	float FrecuenciaMaxDeSpawn()
+    {
+		tiempoTranscurrido = contadorTiempo.conteoTiempo;
+		float frecuencia;
+
+		if (tiempoTranscurrido <= 15f)
+		{
+			frecuencia = 1.75f;
+		}
+		else if (tiempoTranscurrido <= 30f)
+		{
+			frecuencia = 1.5f;
+		}
+		else if (tiempoTranscurrido <= 45f)
+		{
+			frecuencia = 1.4f;
+		}
+		else
+		{
+			frecuencia = 1f;
+		}
+
+
+		return frecuencia;
 	}
 }

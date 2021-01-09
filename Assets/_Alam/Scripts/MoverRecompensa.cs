@@ -6,10 +6,13 @@ public class MoverRecompensa : MonoBehaviour
 {
 	public float velocidad; //Velocidad a la que se mueve el obstáculo
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo
-	
+	private Puntos contadorTiempo;
+	private float tiempoTranscurrido;
+
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<Puntos>();
 	}
 
 	void FixedUpdate()
@@ -24,7 +27,33 @@ public class MoverRecompensa : MonoBehaviour
 			rb.velocity = Vector2.zero;
 		}
 	}
-    
+
+	void Update()
+	{
+		#region DECIDIR A QUÉ VELOCIDAD VA
+
+		tiempoTranscurrido = contadorTiempo.conteoTiempo;
+
+		if (tiempoTranscurrido <= 15f)
+		{
+			velocidad = 3f;
+		}
+		else if (tiempoTranscurrido <= 30f)
+		{
+			velocidad = 4f;
+		}
+		else if (tiempoTranscurrido <= 45f)
+		{
+			velocidad = 5f;
+		}
+		else
+		{
+			velocidad = 6f;
+		}
+
+		#endregion
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		

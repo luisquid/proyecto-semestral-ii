@@ -5,7 +5,7 @@ using TMPro;
 
 public class tiempo : MonoBehaviour //Alvaro
 {
-    float conteoTiempo;
+    public static float conteoTiempo;
 
     void Update()
     {
@@ -15,6 +15,7 @@ public class tiempo : MonoBehaviour //Alvaro
 
     void mostrarTiempo()
     {
+        print("Transcurrido: " + conteoTiempo.ToString());
         GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)conteoTiempo).ToString();
     }
 
