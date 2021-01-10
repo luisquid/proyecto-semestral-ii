@@ -7,17 +7,12 @@ using TMPro;
 public class ShopItemDetails : MonoBehaviour //Kishi
 {
 	public string itemName;
-
 	public int itemCost;
-
 	public bool bought; //ambiguo todo en ingles o español ando piki "bought" --> comprado
+	public Sprite itemSkin;
 
 	private ScripStore scriptStore;
 
-	public Sprite itemSkin;
-
-
-    // Start is called before the first frame update
     void Start()
 	{
 		GetComponentInChildren<Image>().sprite = itemSkin;
@@ -52,7 +47,7 @@ public class ShopItemDetails : MonoBehaviour //Kishi
 			scriptStore.textPointStore.text = PlayerPrefs.GetInt("Puntos") + "";
 		}
 		else
-			Debug.Log("No hay lana joven");
+			Debug.Log("Falta Dinero");
 		
 	}
 
