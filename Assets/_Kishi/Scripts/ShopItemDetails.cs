@@ -10,16 +10,21 @@ public class ShopItemDetails : MonoBehaviour //Kishi
 	public int itemCost;
 	public bool bought; //ambiguo todo en ingles o español ando piki "bought" --> comprado
 	public Sprite itemSkin;
+	public string nameSkin;
 
 	private ScripStore scriptStore;
 
     void Start()
 	{
 		GetComponentInChildren<Image>().sprite = itemSkin;
+
 		scriptStore = FindObjectOfType<ScripStore>();
 	    GetComponentsInChildren<TextMeshProUGUI>()[0].text = itemName;
 	    GetComponentsInChildren<TextMeshProUGUI>()[1].text = itemCost + "";
 	    bought = PlayerPrefs.GetInt(itemName) == 1 ? true : false;
+
+		nameSkin = itemSkin.name;
+
 
 	    if (bought)
 		{
@@ -35,7 +40,12 @@ public class ShopItemDetails : MonoBehaviour //Kishi
 		{
 	    	PlayerPrefs.SetInt(itemName, 0);
 	    }
-    }
+
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			PlayerPrefs.SetInt("Puntos", 20000);
+		}
+	}
 
 	public void ItemComprado()
 	{

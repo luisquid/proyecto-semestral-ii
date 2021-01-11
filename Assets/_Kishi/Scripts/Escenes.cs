@@ -8,6 +8,7 @@ public class Escenes : MonoBehaviour //Kishi
 	public void abrirGame() // public void abrirEscenaPlay()
 	{
 		SceneManager.LoadScene("Game");
+		
 	}
 	
 	public void abrirCredits()

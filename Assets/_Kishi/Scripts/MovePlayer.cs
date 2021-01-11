@@ -21,11 +21,11 @@ public class MovePlayer : MonoBehaviour //Kishi
     // Start is called before the first frame update
     void Start()
     {
-		GetComponent<SpriteRenderer>().sprite = defull; //Agregamos la imagen del personaje
+		//GetComponent<SpriteRenderer>().sprite = defull; //Agregamos la imagen del personaje
 			
         if (GameManager.skin != null) 
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin;
-
+		//print(GameManager.skin);
 	    puntos = 0;
     }
 

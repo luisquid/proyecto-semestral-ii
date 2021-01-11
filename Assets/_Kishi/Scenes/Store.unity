@@ -855,10 +855,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 56
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 73
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 46
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -1381,6 +1381,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851652ea43e061e47af593b940eac43e, type: 3}
+--- !u!114 &1310659551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5182114151978415475, guid: 851652ea43e061e47af593b940eac43e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4055112069762563085}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bed62569d11624418e0340003d948a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1360074571 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8168737271010061592, guid: 851652ea43e061e47af593b940eac43e,
@@ -1597,7 +1609,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 160499531}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1836,6 +1848,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 683329424}
     m_Modifications:
+    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1310659551}
     - target: {fileID: 8168737271010061592, guid: 851652ea43e061e47af593b940eac43e,
         type: 3}
       propertyPath: m_Pivot.x

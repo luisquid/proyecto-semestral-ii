@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        skin = Resources.Load<Sprite>(PlayerPrefs.GetString("Skin"));
+        print(skin.name);
         DontDestroyOnLoad(gameObject);
     }
-    
+
 }
