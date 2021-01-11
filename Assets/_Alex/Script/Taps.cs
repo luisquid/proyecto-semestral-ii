@@ -54,7 +54,7 @@ public class Taps : MonoBehaviour  //Alexander
     {
         Evento.hayEvento = false;
         SceneManager.UnloadSceneAsync("Evento");
-        Puntos.puntoCero += contador;
+        puntos.puntoCero += contador;
     }
 
     void MostrarTiempo()

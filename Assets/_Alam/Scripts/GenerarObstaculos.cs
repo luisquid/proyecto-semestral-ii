@@ -14,14 +14,14 @@ public class GenerarObstaculos : MonoBehaviour
 	private float temporizador; //Lleva la cuenta regresiva para saber si se debe de generar otro objeto
 	public float frecuenciaMinDeSpawn; //Con qué frecuencia aparecen los obstáculos
 	private Vector2 posicionObstaculo; //Posición donde se generará el obstáculo
-	private Puntos contadorTiempo; //Contiene el objeto que tiene el contador de puntos y tiempo
+	private puntos contadorTiempo; //Contiene el objeto que tiene el contador de puntos y tiempo
 	private float tiempoTranscurrido; //Guarda el tiempo transcurrido desde que se empieza la partida
 
 
 	void Start()
     {
 		posicionObstaculo.y = 10f; //Altura a la que aparecen los objetos
-		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<Puntos>(); //Encontrar el contador de puntos con el tag
+		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>(); //Encontrar el contador de puntos con el tag
 	    temporizador = Random.Range(frecuenciaMinDeSpawn, FrecuenciaMaxDeSpawn()); //Inicializar el temporizador
     }
 

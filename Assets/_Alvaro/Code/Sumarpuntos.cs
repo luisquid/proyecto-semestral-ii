@@ -10,7 +10,7 @@ public class Sumarpuntos : MonoBehaviour //Alvaro
     {
         if (collision.gameObject.CompareTag("Recompensa_20")) 
         {
-            Puntos.puntoCero += 20;
+            puntos.puntoCero += 20;
             Destroy(collision.gameObject);
         
         }

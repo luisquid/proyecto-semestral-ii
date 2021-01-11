@@ -6,13 +6,13 @@ public class MoverRecompensa : MonoBehaviour
 {
 	public float velocidad; //Velocidad a la que se mueve el obstáculo
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo
-	private Puntos contadorTiempo;
+	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<Puntos>();
+		contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
 	}
 
 	void FixedUpdate()

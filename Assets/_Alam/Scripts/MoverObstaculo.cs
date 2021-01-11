@@ -5,13 +5,13 @@ using UnityEngine;
 public class MoverObstaculo : MonoBehaviour
 {
 	public float velocidad; //Velocidad a la que se mueve el obstáculo
-	private Puntos contadorTiempo;
+	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo
 	
     void Start()
     {
-        contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<Puntos>();
+        contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
 		rb = GetComponent<Rigidbody2D>();
     }
 

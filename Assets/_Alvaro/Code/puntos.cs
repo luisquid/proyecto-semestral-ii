@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro; //libreria para agregar GUI
 
 
-public class Puntos : MonoBehaviour //Alvaro
+public class puntos : MonoBehaviour //Alvaro
 {
     public TextMeshProUGUI marcadorDePuntos;
     public  TextMeshProUGUI marcadorDeTiempo;
@@ -32,12 +32,7 @@ public class Puntos : MonoBehaviour //Alvaro
         {
             marcadorDeTiempo.text = tiempoNuevo.ToString();
             tiempoAnterior = tiempoNuevo;
-            puntoCero += puntoCero;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)) 
-        { 
-
+            puntoCero += 5;
         }
 
     }//end Update
