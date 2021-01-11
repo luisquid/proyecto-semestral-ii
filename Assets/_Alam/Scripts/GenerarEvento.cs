@@ -41,7 +41,7 @@ public class GenerarEvento : MonoBehaviour
 	//Genera un objeto "evento" en una posición aleatoria en X.
 	public void Generar()
 	{
-		posicionEvento.x = Random.Range(-3.0f, 3.0f);
+		posicionEvento.x = Random.Range(-2.0f, 2.0f);
 		Instantiate(evento, posicionEvento, Quaternion.identity);
 	}
 

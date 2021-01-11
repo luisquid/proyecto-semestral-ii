@@ -6,7 +6,7 @@ public class Links : MonoBehaviour
 {
 	public string links;
 	
-  
+	// Agregas
 	public void mandar()
 	{
 		

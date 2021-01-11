@@ -42,7 +42,7 @@ public class GenerarRecompensa : MonoBehaviour
 
 	//Genera un objeto aleatorio "Recompensa" del array de recompensas en una posición aleatoria en X
 	public void Generar(){
-		posicionRecompensa.x = Random.Range(-3.0f, 3.0f);
+		posicionRecompensa.x = Random.Range(-2.5f, 2.5f);
 		int randObst = Random.Range(0, recompensas.Length);
 		Instantiate(recompensas[randObst], posicionRecompensa, Quaternion.identity);
 	}
