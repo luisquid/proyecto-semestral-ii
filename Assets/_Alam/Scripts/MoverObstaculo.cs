@@ -23,19 +23,19 @@ public class MoverObstaculo : MonoBehaviour
 
 		if (tiempoTranscurrido <= 15f)
 		{
-			velocidad = 3f;
+			velocidad = 2f;
 		}
 		else if (tiempoTranscurrido <= 30f)
 		{
-			velocidad = 4f;
+			velocidad = 3.5f;
 		}
 		else if (tiempoTranscurrido <= 45f)
 		{
-			velocidad = 5f;
+			velocidad = 4.3f;
 		}
 		else
 		{
-			velocidad = 6f;
+			velocidad = 5.5f;
 		}
 
 		#endregion

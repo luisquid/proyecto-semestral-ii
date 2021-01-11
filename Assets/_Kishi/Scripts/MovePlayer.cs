@@ -17,6 +17,8 @@ public class MovePlayer : MonoBehaviour //Kishi
 	public Sprite defull;
 	
 	private int puntos;
+	private puntos contadorTiempo;
+	private float tiempoTranscurrido;
 	
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin;
 		//print(GameManager.skin);
 	    puntos = 0;
+	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,20 @@ public class MovePlayer : MonoBehaviour //Kishi
 	{
 		if (Evento.hayEvento == true)
 			rb.velocity = new Vector2(0, 0);
+			
+		tiempoTranscurrido = contadorTiempo.conteoTiempo;
+
+		if (tiempoTranscurrido >=60f)
+		{
+			movePositive = 5;
+			moveNegative = -5;
+		}
+		else if (tiempoTranscurrido >= 350f)
+		{
+			 movePositive = 4;
+			 moveNegative = -4;
+		}
+
 	}
 	
     
