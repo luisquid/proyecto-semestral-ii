@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         skin = Resources.Load<Sprite>(PlayerPrefs.GetString("Skin"));
+        //Asignar la skin por default si no tiene otra guardada
+        if (GameManager.skin != null)
+            GetComponent<SpriteRenderer>().sprite = GameManager.skin;
+
         print(skin.name);
         DontDestroyOnLoad(gameObject);
     }

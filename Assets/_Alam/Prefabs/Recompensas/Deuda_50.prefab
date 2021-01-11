@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3162638156522160043}
   - component: {fileID: 6127091431784365354}
   m_Layer: 0
-  m_Name: Recompensa
-  m_TagString: Recompensa_20
+  m_Name: Deuda_50
+  m_TagString: Deuda_5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fab06e0be9375cc4d823efa71629885c, type: 3}
-  m_Color: {r: 0.2635981, g: 1, b: 0.033018887, a: 1}
+  m_Color: {r: 1, g: 0.114108294, b: 0.031372547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

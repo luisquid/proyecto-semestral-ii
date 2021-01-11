@@ -25,7 +25,6 @@ public class ShopItemDetails : MonoBehaviour //Kishi
 
 		nameSkin = itemSkin.name;
 
-
 	    if (bought)
 		{
 	    	GetComponentInChildren<Button>().interactable = false;
@@ -36,7 +35,8 @@ public class ShopItemDetails : MonoBehaviour //Kishi
     // Update is called once per frame
     void Update()
     {
-	    if(Input.GetKeyDown(KeyCode.Space))
+        #region CONTROLES SOLO PARA DEBUG
+        if (Input.GetKeyDown(KeyCode.Space))
 		{
 	    	PlayerPrefs.SetInt(itemName, 0);
 	    }
@@ -45,9 +45,10 @@ public class ShopItemDetails : MonoBehaviour //Kishi
 		{
 			PlayerPrefs.SetInt("Puntos", 20000);
 		}
-	}
+        #endregion
+    }
 
-	public void ItemComprado()
+    public void ItemComprado()
 	{
 		if(itemCost <= PlayerPrefs.GetInt("Puntos"))
 		{

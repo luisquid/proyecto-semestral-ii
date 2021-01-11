@@ -14,7 +14,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 
 	public TextMeshProUGUI puntosTxt;
 
-	public Sprite defull;
+	public Sprite defaultSkin;
 	
 	private int puntos;
 	private puntos contadorTiempo;
@@ -23,12 +23,15 @@ public class MovePlayer : MonoBehaviour //Kishi
     // Start is called before the first frame update
     void Start()
     {
-		//GetComponent<SpriteRenderer>().sprite = defull; //Agregamos la imagen del personaje
-			
+		//Si no tiene una skin elegida, le pone la default
+        #region AGREGAR SKIN AL JUGADOR   
         if (GameManager.skin != null) 
-			GetComponent<SpriteRenderer>().sprite = GameManager.skin;
-		//print(GameManager.skin);
-	    puntos = 0;
+			GetComponent<SpriteRenderer>().sprite = GameManager.skin; 
+		else
+			GetComponent<SpriteRenderer>().sprite = defaultSkin; //Agregamos la imagen del personaje
+        #endregion
+        //print(GameManager.skin);
+        puntos = 0;
 	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
     }
 

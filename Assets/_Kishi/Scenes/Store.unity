@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 160499532}
   m_HandleRect: {fileID: 160499531}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1987,14 +1987,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1310659551}
+    - target: {fileID: 2230231711220846051, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8168737271010061592, guid: 851652ea43e061e47af593b940eac43e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2103,7 +2103,7 @@ PrefabInstance:
     - target: {fileID: 8168737271010061593, guid: 851652ea43e061e47af593b940eac43e,
         type: 3}
       propertyPath: itemCost
-      value: 15000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8168737271010061593, guid: 851652ea43e061e47af593b940eac43e,
         type: 3}
@@ -2120,6 +2120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pollo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168737271475180926, guid: 851652ea43e061e47af593b940eac43e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851652ea43e061e47af593b940eac43e, type: 3}
