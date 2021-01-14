@@ -9,8 +9,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 	
 	public Rigidbody2D rb;
 
-	public float moveNegative; //Para que dos variables??????
-	public float movePositive;
+	public float velocidadMov;
 
 	public TextMeshProUGUI puntosTxt;
 
@@ -19,6 +18,9 @@ public class MovePlayer : MonoBehaviour //Kishi
 	private int puntos;
 	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
+	Vector2 vel_rb;
+
+
 	
     // Start is called before the first frame update
     void Start()
@@ -33,35 +35,60 @@ public class MovePlayer : MonoBehaviour //Kishi
         //print(GameManager.skin);
         puntos = 0;
 	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
+		
     }
 
     // Update is called once per frame
     void Update()
 	{
-		if (Evento.hayEvento == true)
-			rb.velocity = new Vector2(0, 0);
+		vel_rb = rb.velocity;
+
+		if (Evento.hayEvento) //True
+			vel_rb = new Vector2(0, 0);
 			
 		tiempoTranscurrido = contadorTiempo.conteoTiempo;
 
 		if (tiempoTranscurrido >=60f)
 		{
-			movePositive = 5;
-			moveNegative = -5;
+			velocidadMov = 5;
 		}
 		else if (tiempoTranscurrido >= 350f)
 		{
-			 movePositive = 4;
-			 moveNegative = -4;
+			 velocidadMov = 4;
 		}
 
+		if (!Evento.hayEvento) //False
+		{
+			if (Input.GetKeyDown(KeyCode.D)) //Derecha con tecla
+			{
+				vel_rb.x = velocidadMov;
+			}
+			if (Input.GetKeyDown(KeyCode.A))//Izquierda con tecla
+			{
+				vel_rb.x = -velocidadMov;
+			}
+			
+			if(Input.GetMouseButtonDown(0))
+            {
+				Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y); //Guardamos el vector del mouse
+				Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition); //Referencia al tama;o de camara
+
+				if(worldPosition.x >= 0) 
+					vel_rb.x = velocidadMov; //Mover a la derecha
+				else
+					vel_rb.x = -velocidadMov; //Mover a la Izquierda
+			}
+		}
+		
+		rb.velocity = vel_rb; 
 	}
 	
     
-	public void MovePlayerLeft()
+	/*public void MovePlayerLeft()
 	{
 		if (Evento.hayEvento == false)
 		{
-			rb.velocity = new Vector2(moveNegative, 0);
+			rb.velocity = new Vector2(moveNegative, 0); //
 			
 		}
 		
@@ -71,9 +98,9 @@ public class MovePlayer : MonoBehaviour //Kishi
 	{
 		if (Evento.hayEvento == false)
 		{
-			rb.velocity = new Vector2(movePositive, 0);
+			rb.velocity = new Vector2(velocidadMov, 0);
 		}
-	}
+	}*/
 
 	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -89,7 +116,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 
 	private void GameOver() //cargamos la escena de muerte
 	{
-		SceneManager.LoadScene("GameOver");
+		SceneManager.LoadScene("GameOver"); //Posible cambio a carga aditiva-----------------------------
 	}
 
 }//end Class
