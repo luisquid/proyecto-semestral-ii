@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerarRecompensa : MonoBehaviour
+public class GenerarRecompensa : MonoBehaviour//Alam
 {
 	/*
 	 * Este script sirve para generar objetos que llamamos "Recompensa", cuando el jugador toca

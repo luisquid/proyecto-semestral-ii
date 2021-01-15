@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GuardarSkin : MonoBehaviour
 {
+	/*
+	 * Para guardas que skins somos los que hemos comprado y iniciar partidas con ellos puestos
+	 */
 	private string nameSkin;
 	public string ruta = "Resources/";
 	public void Guardar()

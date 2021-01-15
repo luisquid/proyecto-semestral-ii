@@ -10,8 +10,8 @@ public class Parallax : MonoBehaviour
     
     [SerializeField]
 
-    public Transform posInicial;
-    public Transform posFinal;
+    public Transform posInicial;//donde inicia el loop
+    public Transform posFinal;//donde finaliza el loop
 
     public float velocidad;
 
@@ -51,10 +51,10 @@ public class Parallax : MonoBehaviour
             velocidad = 5.5f;
         }
 
-        rb.velocity =  Vector2.down * velocidad;
+        rb.velocity =  Vector2.down * velocidad; //Rregresamos la vel
 
         if (gameObject.transform.position.y <= posFinal.position.y) //si pasamos la pos nos regresamos para dejarla correr
-            gameObject.transform.position = posInicial.position;
+            gameObject.transform.position = posInicial.position; //Regresamos a la posicion de inicio de loop
 
     }
 }

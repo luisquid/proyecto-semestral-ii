@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Evento : MonoBehaviour //Alexander
 {
+    /*
+     se crea un evento tipo quic time event si caes en una trampa el cual se activa por booleanos
+    */
+
     //Guarda el valor "true" cuando hay un evento activo (Quick time event)
     public static bool hayEvento = false; 
 

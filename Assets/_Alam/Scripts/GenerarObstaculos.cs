@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerarObstaculos : MonoBehaviour
+public class GenerarObstaculos : MonoBehaviour//Alam
 {
 	/*
 	 * Este script sirve para generar objetos que llamamos "Obstáculos", estos objetos causan un

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverRecompensa : MonoBehaviour
+public class MoverRecompensa : MonoBehaviour//Alam
 {
 	public float velocidad; //Velocidad a la que se mueve el obstáculo
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo

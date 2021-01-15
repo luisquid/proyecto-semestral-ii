@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverObstaculo : MonoBehaviour
+public class MoverObstaculo : MonoBehaviour//Alam
 {
 	public float velocidad; //Velocidad a la que se mueve el obstáculo
 	private puntos contadorTiempo;

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement; //Libreria para manejo de escenas
 
 public class Escenes : MonoBehaviour //Kishi
 {
+	/*
+		Manejo de las cargas de escenas dependiendo del estado o del evento indicado
+	 */
 	public void abrirGame() // public void abrirEscenaPlay()
 	{
 		SceneManager.LoadScene("Game");

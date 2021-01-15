@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerarEvento : MonoBehaviour
+public class GenerarEvento : MonoBehaviour//Alam
 {
 	/*
 	 * Este script sirve para generar objetos que llamamos "eventos", los cuales hacen que el jugador

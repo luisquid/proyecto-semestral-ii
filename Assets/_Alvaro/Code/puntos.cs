@@ -6,6 +6,9 @@ using TMPro; //libreria para agregar GUI
 
 public class puntos : MonoBehaviour //Alvaro
 {
+    /*
+     Para visualizar el tiempo en un canvas mediante un text mesh ademas de ser llenado por el time real y puntos 
+     */
     public TextMeshProUGUI marcadorDePuntos;
     public  TextMeshProUGUI marcadorDeTiempo;
 

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Sumarpuntos : MonoBehaviour //Alvaro
 {
-   
+   /*
+    Asiganos valor a los puntos y restamos puntos esto de forma Play en el juego
+    */
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         #region AGREGAR O RESTAR PUNTOS DE RECOMPENSAS
@@ -18,7 +21,7 @@ public class Sumarpuntos : MonoBehaviour //Alvaro
             puntos.puntoCero += 20;
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.CompareTag("Deuda_5"))
+        else if (collision.gameObject.CompareTag("Deuda_5"))//Menos 5 puntos
         {
             puntos.puntoCero -= 50;
             //Si se le restan más puntos de los necesarios, para que no quedé en negativo
