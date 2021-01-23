@@ -9,14 +9,9 @@ public class Parallax : MonoBehaviour
     SpriteRenderer fondo;
     
     [SerializeField]
-
     public Transform posInicial;//donde inicia el loop
     public Transform posFinal;//donde finaliza el loop
-
     public float velocidad;
-
-    private puntos contadorTiempo;
-    private float tiempoTranscurrido;
 
     private Rigidbody2D rb;
 
@@ -25,33 +20,13 @@ public class Parallax : MonoBehaviour
     {
 
         fondo = GetComponent<SpriteRenderer>();
-        contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        tiempoTranscurrido = contadorTiempo.conteoTiempo;
-
-        if (tiempoTranscurrido <= 15f)
-        {
-            velocidad = 2f;
-        }
-        else if (tiempoTranscurrido <= 30f)
-        {
-            velocidad = 3.5f;
-        }
-        else if (tiempoTranscurrido <= 45f)
-        {
-            velocidad = 4.3f;
-        }
-        else
-        {
-            velocidad = 5.5f;
-        }
-
-        rb.velocity =  Vector2.down * velocidad; //Rregresamos la vel
+        rb.velocity =  Vector2.down * SpeedManager.velocidadGlobal; //Rregresamos la vel
 
         if (gameObject.transform.position.y <= posFinal.position.y) //si pasamos la pos nos regresamos para dejarla correr
             gameObject.transform.position = posInicial.position; //Regresamos a la posicion de inicio de loop

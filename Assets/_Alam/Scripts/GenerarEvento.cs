@@ -18,7 +18,7 @@ public class GenerarEvento : MonoBehaviour//Alam
 	void Start()
 	{
 		posicionEvento.y = 10f; //Lo posiciona fuera de la pantalla, en la parte superior
-		temporizador = Random.Range(20f, 30f); //Inicializa el temporizador por primera vez (valor random)
+		temporizador = Random.Range(1f, 2f); //Inicializa el temporizador por primera vez (valor random)
 	}
 
 	// Update is called once per frame
@@ -41,7 +41,7 @@ public class GenerarEvento : MonoBehaviour//Alam
 	//Genera un objeto "evento" en una posición aleatoria en X.
 	public void Generar()
 	{
-		posicionEvento.x = Random.Range(-2.0f, 2.0f);
+		posicionEvento.x = Random.Range(-2.5f, 2.5f);
 		Instantiate(evento, posicionEvento, Quaternion.identity);
 	}
 

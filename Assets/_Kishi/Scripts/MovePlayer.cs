@@ -8,17 +8,14 @@ public class MovePlayer : MonoBehaviour //Kishi
 {
 	
 	public Rigidbody2D rb;
-
 	public float velocidadMov;
-
 	public TextMeshProUGUI puntosTxt;
-
 	public Sprite defaultSkin;
 	
 	private int puntos;
 	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
-	Vector2 vel_rb;
+	private Vector2 vel_rb;
 
 
 	
@@ -42,19 +39,18 @@ public class MovePlayer : MonoBehaviour //Kishi
     void Update()
 	{
 		vel_rb = rb.velocity;
+		tiempoTranscurrido = contadorTiempo.conteoTiempo;
 
 		if (Evento.hayEvento) //True
 			vel_rb = new Vector2(0, 0);
-			
-		tiempoTranscurrido = contadorTiempo.conteoTiempo;
 
 		if (tiempoTranscurrido >=60f)
 		{
-			velocidadMov = 5;
+			velocidadMov = 4;
 		}
-		else if (tiempoTranscurrido >= 350f)
+		else if (tiempoTranscurrido >= 300f)
 		{
-			 velocidadMov = 4;
+			 velocidadMov = 5;
 		}
 
 		if (!Evento.hayEvento) //False
@@ -82,30 +78,10 @@ public class MovePlayer : MonoBehaviour //Kishi
 		
 		rb.velocity = vel_rb; 
 	}
-	
-    
-	/*public void MovePlayerLeft()
-	{
-		if (Evento.hayEvento == false)
-		{
-			rb.velocity = new Vector2(moveNegative, 0); //
-			
-		}
-		
-	}
-	
-	public void MovePlayerRight()
-	{
-		if (Evento.hayEvento == false)
-		{
-			rb.velocity = new Vector2(velocidadMov, 0);
-		}
-	}*/
 
-	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
-		   //Si choca con las paredes, muere
+		//Si choca con las paredes, muere
 		if(collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
 		{
 			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text)); //Guardamos partida

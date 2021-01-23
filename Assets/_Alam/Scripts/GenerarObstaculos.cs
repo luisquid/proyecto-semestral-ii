@@ -46,7 +46,7 @@ public class GenerarObstaculos : MonoBehaviour//Alam
 	//Genera un objeto aleatorio "Obstaculo" del array de recompensas en una posición aleatoria en X
 	private void Generar()
     {
-		posicionObstaculo.x = Random.Range(-3.0f, 3.0f); //Coordenada en X donde se va a generar
+		posicionObstaculo.x = Random.Range(-2.75f, 2.75f); //Coordenada en X donde se va a generar
 		int randObst = Random.Range(0, obstaculos.Length); //Elige un objeto del array para generarlo
 		Instantiate(obstaculos[randObst], posicionObstaculo, Quaternion.identity); //Instanciar el objeto
 	}

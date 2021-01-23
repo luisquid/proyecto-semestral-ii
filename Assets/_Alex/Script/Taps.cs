@@ -19,6 +19,7 @@ public class Taps : MonoBehaviour  //Alexander
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(gameObject.name, gameObject);
         contador = 0;
         marcadorDeTaps.text = contador.ToString();
         tiempo = limite;
