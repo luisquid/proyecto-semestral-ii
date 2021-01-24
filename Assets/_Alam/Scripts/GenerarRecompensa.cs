@@ -34,7 +34,7 @@ public class GenerarRecompensa : MonoBehaviour//Alam
 			if (temporizador <= 0f)
 			{
 				Generar();
-				temporizador = Random.Range(10f, 25f);
+				temporizador = Random.Range(5f, 15f);
 			}
 		}
         #endregion

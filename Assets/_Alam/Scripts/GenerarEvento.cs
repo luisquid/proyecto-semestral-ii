@@ -18,7 +18,7 @@ public class GenerarEvento : MonoBehaviour//Alam
 	void Start()
 	{
 		posicionEvento.y = 10f; //Lo posiciona fuera de la pantalla, en la parte superior
-		temporizador = Random.Range(1f, 2f); //Inicializa el temporizador por primera vez (valor random)
+		temporizador = Random.Range(5f, 10f); //Inicializa el temporizador por primera vez (valor random)
 	}
 
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class GenerarEvento : MonoBehaviour//Alam
 			if (temporizador <= 0f)
 			{
 				Generar();
-				temporizador = Random.Range(40f, 60f);
+				temporizador = Random.Range(15f, 30f);
 			}
 		}
 		#endregion

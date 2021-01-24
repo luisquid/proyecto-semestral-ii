@@ -55,21 +55,21 @@ public class GenerarObstaculos : MonoBehaviour//Alam
 		tiempoTranscurrido = contadorTiempo.conteoTiempo;
 		float frecuencia;
 
-		if (tiempoTranscurrido <= 15f)
+		if (tiempoTranscurrido <= 20f)
 		{
 			frecuencia = 1.75f;
 		}
-		else if (tiempoTranscurrido <= 30f)
+		else if (tiempoTranscurrido <= 40f)
 		{
 			frecuencia = 1.5f;
 		}
-		else if (tiempoTranscurrido <= 45f)
+		else if (tiempoTranscurrido <= 60f)
 		{
-			frecuencia = 1.4f;
+			frecuencia = 1.3f;
 		}
 		else
 		{
-			frecuencia = 1f;
+			frecuencia = 1.1f;
 		}
 
 
