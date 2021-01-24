@@ -42,16 +42,18 @@ public class Taps : MonoBehaviour  //Alexander
         if (tiempo <= 0f) //si ya pasó el tiempo límite
         {
             tiempo = 100f; //Ponerlo en un tiempo distinto para que ya no se cumpla esta condición
+            if (contadorTaps >= 20) //Si llega a la meta gana los puntos
+            {
+                puntos.puntoCero += 50;
+                Fin();
+            }
             Fin();
         }
         else
-            MostrarTiempo(); //Mostrar el tiempo solo si es necesario
-
-        if(contadorTaps == 20) //Si llega a la meta gana los puntos
         {
-            puntos.puntoCero += 50;
-            Fin();
+            MostrarTiempo(); //Mostrar el tiempo solo si es necesario
         }
+
     }
 
     public void Tap()

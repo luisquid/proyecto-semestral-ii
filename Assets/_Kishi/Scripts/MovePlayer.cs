@@ -27,7 +27,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 			GetComponent<SpriteRenderer>().sprite = defaultSkin; //Agregamos la imagen del personaje
         #endregion
         //print(GameManager.skin);
-        puntos = 0;
+        puntos = PlayerPrefs.GetInt("Puntos");
 	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
     }
 

@@ -22,28 +22,31 @@ public class puntos : MonoBehaviour //Alvaro
         //marcadorDePuntos = GetComponent<TextMeshProUGUI>(); //ya que no se encontro por si solo
         conteoTiempo += Time.deltaTime; //llenamos el tiempo con a tiempo real
 	    mostrarTiempo(); //Hace un casteo del tiempo y lo imprime en un Text
-	    puntoCero=0;
+	    puntoCero = 0;
     }
 
     void Update()
     {
-        conteoTiempo += Time.deltaTime;
-        int tiempoNuevo = (int)conteoTiempo;
-
-        marcadorDePuntos.text = puntoCero.ToString();
-
-        if (tiempoNuevo != tiempoAnterior) 
+        if (!Evento.hayEvento)
         {
-            marcadorDeTiempo.text = tiempoNuevo.ToString();
-            tiempoAnterior = tiempoNuevo;
-            puntoCero += 5;
+            conteoTiempo += Time.deltaTime;
+
+            int tiempoNuevo = (int)conteoTiempo;
+
+            if (tiempoNuevo != tiempoAnterior)
+            {
+                marcadorDePuntos.text = puntoCero.ToString();
+                marcadorDeTiempo.text = tiempoNuevo.ToString();
+                tiempoAnterior = tiempoNuevo;
+                puntoCero += 5;
+            }
         }
 
     }//end Update
 
     void mostrarTiempo()
     {
-        GetComponent<TextMeshProUGUI>().text = "TIME\n" + ((int)conteoTiempo).ToString();
+        GetComponent<TextMeshProUGUI>().text = ((int)conteoTiempo).ToString();
     }//end void
 
 
