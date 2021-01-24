@@ -8,20 +8,25 @@ public class Taps : MonoBehaviour  //Alexander
 {
     //crear un loop para dar taps hasta llevar a un tiempo deseado
 
-    int contador; //para los taps
+    int contadorTaps; //para los taps
 
     public TextMeshProUGUI marcadorDeTaps;
     public TextMeshProUGUI marcadorDeTiempo;
-
+    public TextMeshProUGUI cuentaRegresiva;
+    public GameObject interfazTaps;
     public float limite;
+
     float tiempo;
+    private int contador = 3;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(gameObject.name, gameObject);
-        contador = 0;
-        marcadorDeTaps.text = contador.ToString();
+	    //Debug.Log(gameObject.name, gameObject);
+        contadorTaps = 0;
+        marcadorDeTaps.text = contadorTaps.ToString();
+        cuentaRegresiva.text = contador.ToString();
         tiempo = limite;
     }
 
@@ -30,37 +35,66 @@ public class Taps : MonoBehaviour  //Alexander
     {
         LoopDeTaps();
         tiempo -= Time.deltaTime;
-        MostrarTiempo();
     }
 
     public void LoopDeTaps()
     {
-        if (tiempo <= 0f) //si ya pasaron dos segundos
+        if (tiempo <= 0f) //si ya pasó el tiempo límite
         {
+            tiempo = 100f; //Ponerlo en un tiempo distinto para que ya no se cumpla esta condición
             Fin();
         }
-        if(contador == 20) //condicion de salir del loop
+        else
+            MostrarTiempo(); //Mostrar el tiempo solo si es necesario
+
+        if(contadorTaps == 20) //Si llega a la meta gana los puntos
         {
+            puntos.puntoCero += 50;
             Fin();
         }
     }
 
     public void Tap()
     {
-        contador++;
-        marcadorDeTaps.text = contador.ToString();
+        contadorTaps++;
+        marcadorDeTaps.text = contadorTaps.ToString();
     }
 
     public void Fin() 
     {
-        Evento.hayEvento = false;
-        SceneManager.UnloadSceneAsync("Evento");
-        puntos.puntoCero += contador;
+        interfazTaps.SetActive(false); //Quitar del canvas el quick time event
+        cuentaRegresiva.gameObject.SetActive(true);
+        int tiempoEspera = 1;
+        for(int i = 0; i < 3; i++, tiempoEspera++)
+        {
+            StartCoroutine(RegresarAlJuego(tiempoEspera));
+        }
+
     }
 
     void MostrarTiempo()
     {
         marcadorDeTiempo.text =  (tiempo).ToString("#.00");
+    }
+
+
+    /* 
+     * Esta co-rutina pone en pantalla un contador, sirve para llamarla cuando el jugador sale del evento y dar una mejor UX.
+     * No deja que el juego siga hasta que termine la cuenta regresiva
+     */
+    IEnumerator RegresarAlJuego(float _tiempoEspera)
+    {
+        yield return new WaitForSeconds(_tiempoEspera);
+        contador--;
+        if(contador > 0)
+        {
+            cuentaRegresiva.text = contador.ToString();
+        }
+        else
+        {
+            Evento.hayEvento = false;
+            SceneManager.UnloadSceneAsync("Evento");
+        }
     }
 
 }

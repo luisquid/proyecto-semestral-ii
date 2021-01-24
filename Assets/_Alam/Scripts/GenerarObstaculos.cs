@@ -17,7 +17,6 @@ public class GenerarObstaculos : MonoBehaviour//Alam
 	private puntos contadorTiempo; //Contiene el objeto que tiene el contador de puntos y tiempo
 	private float tiempoTranscurrido; //Guarda el tiempo transcurrido desde que se empieza la partida
 
-
 	void Start()
     {
 		posicionObstaculo.y = 10f; //Altura a la que aparecen los objetos

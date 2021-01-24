@@ -8,23 +8,23 @@ public class Escenes : MonoBehaviour //Kishi
 	/*
 		Manejo de las cargas de escenas dependiendo del estado o del evento indicado
 	 */
-	public void abrirGame() // public void abrirEscenaPlay()
+	public void Play() // public void abrirEscenaPlay()
 	{
+		Time.timeScale = 1f;
 		SceneManager.LoadScene("Game");
-		
 	}
 	
-	public void abrirCredits()
+	public void Creditos()
 	{
 		SceneManager.LoadScene("Credits");
 	}
 	
-	public void abrirStore()
+	public void Store()
 	{
 		SceneManager.LoadScene("Store");
 	}
 	
-	public void abrirMenu()
+	public void MainMenu()
 	{
 		SceneManager.LoadScene("Menu");
 	}

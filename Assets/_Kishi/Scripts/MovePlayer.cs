@@ -16,10 +16,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
 	private Vector2 vel_rb;
-
-
 	
-    // Start is called before the first frame update
     void Start()
     {
 		//Si no tiene una skin elegida, le pone la default
@@ -32,7 +29,6 @@ public class MovePlayer : MonoBehaviour //Kishi
         //print(GameManager.skin);
         puntos = 0;
 	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
-		
     }
 
     // Update is called once per frame
@@ -41,17 +37,14 @@ public class MovePlayer : MonoBehaviour //Kishi
 		vel_rb = rb.velocity;
 		tiempoTranscurrido = contadorTiempo.conteoTiempo;
 
-		if (Evento.hayEvento) //True
-			vel_rb = new Vector2(0, 0);
-
-		if (tiempoTranscurrido >=60f)
+		if (tiempoTranscurrido >= 60f)
 		{
 			velocidadMov = 4;
 		}
-		else if (tiempoTranscurrido >= 300f)
+		else if (tiempoTranscurrido >= 150f)
 		{
-			 velocidadMov = 5;
-		}
+			velocidadMov = 5;
+		}	
 
 		if (!Evento.hayEvento) //False
 		{
@@ -75,25 +68,31 @@ public class MovePlayer : MonoBehaviour //Kishi
 					vel_rb.x = -velocidadMov; //Mover a la Izquierda
 			}
 		}
-		
+        else
+        {
+			vel_rb = new Vector2(0, 0);
+		}
+
 		rb.velocity = vel_rb; 
 	}
 
-	protected void OnCollisionEnter2D(Collision2D collisionInfo)
-	{
+    private void OnTriggerEnter2D(Collider2D collisionInfo)
+    {
 		//Si choca con las paredes, muere
-		if(collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
+		if (collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
 		{
 			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text)); //Guardamos partida
 			GameOver();
-			Destroy(this.gameObject);
 		}
 	}
 
 	private void GameOver() //cargamos la escena de muerte
 	{
-		SceneManager.LoadScene("GameOver"); //Posible cambio a carga aditiva-----------------------------
+		SceneManager.LoadScene("GameOver", LoadSceneMode.Additive); //Posible cambio a carga aditiva-----------------------------
+		Time.timeScale = 0f;
 	}
+
+	
 
 }//end Class
 

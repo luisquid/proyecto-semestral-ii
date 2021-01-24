@@ -20,6 +20,7 @@ public class Evento : MonoBehaviour //Alexander
         {
             hayEvento = true;
             SceneManager.LoadScene("Evento",LoadSceneMode.Additive); //Añade la escena del Evento
+            Destroy(gameObject);
         }
     }
 }
