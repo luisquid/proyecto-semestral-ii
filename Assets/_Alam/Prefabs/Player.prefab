@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8301189815969661644}
   - component: {fileID: 8301189815969661647}
   - component: {fileID: 8301189815969661646}
-  - component: {fileID: 8301189815969661633}
   - component: {fileID: 2833034281851060352}
+  - component: {fileID: 437196375217718320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -122,32 +122,8 @@ MonoBehaviour:
   velocidadMov: 3
   puntosTxt: {fileID: 0}
   defaultSkin: {fileID: 21300000, guid: 5d574a82cd5666c4280595393eddb3f0, type: 3}
---- !u!61 &8301189815969661633
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8301189815969661632}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0041959584, y: 0.23866034}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 4.1, y: 3.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3677466, y: 1.9071922}
-  m_EdgeRadius: 0
+  tortuga: {fileID: 0}
+  renderTortuga: {fileID: 8301189815969661644}
 --- !u!70 &2833034281851060352
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +140,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.054312795, y: -0.09052078}
   m_Size: {x: 1.3409841, y: 2.3789587}
   m_Direction: 0
+--- !u!95 &437196375217718320
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301189815969661632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27300a094791fdb4a9a16b0b28a9ff80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2587769918475465349}
   m_Layer: 0
   m_Name: Deuda_50
-  m_TagString: Deuda_5
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,4 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee709aded27854a83a060449da9f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valorPuntos: -5000
+  valorPuntos: -50

@@ -7,9 +7,6 @@ TagManager:
   - Borde
   - Wall
   - Obstaculo
-  - Recompensa_20
-  - Recompensa_10
-  - Deuda_5
   - Evento
   - GameManager
   - Contador

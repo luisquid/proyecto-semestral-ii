@@ -11,7 +11,9 @@ public class MovePlayer : MonoBehaviour //Kishi
 	public float velocidadMov;
 	public TextMeshProUGUI puntosTxt;
 	public Sprite defaultSkin;
-	
+	public Animator anim;
+	public SpriteRenderer renderTortuga;
+
 	private int puntos;
 	private puntos contadorTiempo;
 	private float tiempoTranscurrido;
@@ -20,15 +22,18 @@ public class MovePlayer : MonoBehaviour //Kishi
     void Start()
     {
 		//Si no tiene una skin elegida, le pone la default
-        #region AGREGAR SKIN AL JUGADOR   
+        /*#region AGREGAR SKIN AL JUGADOR   
         if (GameManager.skin != null) 
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin; 
 		else
 			GetComponent<SpriteRenderer>().sprite = defaultSkin; //Agregamos la imagen del personaje
-        #endregion
+        #endregion*/
+
         //print(GameManager.skin);
         puntos = PlayerPrefs.GetInt("Puntos");
 	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
+		renderTortuga = GetComponent<SpriteRenderer>();
+		anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,22 @@ public class MovePlayer : MonoBehaviour //Kishi
 	{
 		vel_rb = rb.velocity;
 		tiempoTranscurrido = contadorTiempo.conteoTiempo;
+		anim.SetBool("Movimiento", false);
+
+
+		if (vel_rb.x > 0)
+        {
+			anim.SetBool("Movimiento", true);
+			renderTortuga.flipX = false;
+		}
+		else if (vel_rb.x < 0)
+        {
+			anim.SetBool("Movimiento", true);
+			renderTortuga.flipX = true;
+		}
+		else
+        {
+		}
 
 		if (tiempoTranscurrido >= 60f)
 		{
