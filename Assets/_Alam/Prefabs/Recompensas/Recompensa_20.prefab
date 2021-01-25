@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8791568827760454018}
   - component: {fileID: 3162638156522160043}
   - component: {fileID: 6127091431784365354}
+  - component: {fileID: -20325073928514748}
   m_Layer: 0
   m_Name: Recompensa_20
   m_TagString: Recompensa_20
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5168045746138140526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.68143773, y: 0.68143773, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -118,7 +119,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5168045746138140526}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -143,4 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80f69f981ea7c547876e05e5583bbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
+--- !u!114 &-20325073928514748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168045746138140526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ee709aded27854a83a060449da9f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valorPuntos: 20

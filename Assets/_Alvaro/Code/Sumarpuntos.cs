@@ -4,13 +4,31 @@ using UnityEngine;
 
 public class Sumarpuntos : MonoBehaviour //Alvaro
 {
-   /*
-    Asiganos valor a los puntos y restamos puntos esto de forma Play en el juego
-    */
+    /*
+     Asiganos valor a los puntos y restamos puntos esto de forma Play en el juego
+     */
 
+    public int valorPuntos;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        #region AGREGAR O RESTAR PUNTOS DE RECOMPENSAS
+        //Alexander Lo manejo orientado por objetos ya que debe llevarlo el mismo  objeto
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            puntos.puntoCero += valorPuntos;
+
+            if (puntos.puntoCero < 0)
+                puntos.puntoCero = 0;
+
+            Destroy(gameObject);
+
+            
+        }
+
+
+        //Alvarin lo manejo asi 
+
+
+        /*#region AGREGAR O RESTAR PUNTOS DE RECOMPENSAS
         if (collision.gameObject.CompareTag("Recompensa_10")) 
         {
             puntos.puntoCero += 10;
@@ -29,6 +47,6 @@ public class Sumarpuntos : MonoBehaviour //Alvaro
                 puntos.puntoCero = 0;
             Destroy(collision.gameObject);
         }
-        #endregion
+        #endregion*/
     }
 }

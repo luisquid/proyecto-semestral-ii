@@ -23,7 +23,7 @@ public class MoverObstaculo : MonoBehaviour//Alam
 			rb.velocity = Vector2.zero;
 		}
 	}
-    
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag("Borde")) //Revisa si ya llegó hasta abajo de la pantalla
