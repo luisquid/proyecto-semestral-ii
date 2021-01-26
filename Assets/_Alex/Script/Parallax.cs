@@ -38,13 +38,10 @@ public class Parallax : MonoBehaviour
         if (!Evento.hayEvento)
         {
             rb.velocity = Vector2.down * SpeedManager.velocidadGlobal; //Le da la velocidad de movimiento al obstáculo
-            print("IF");
         }
         else
         {
             rb.velocity = Vector2.zero;
-            print("ELSE");
-
         }
 
     }

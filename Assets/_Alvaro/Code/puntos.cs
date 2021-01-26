@@ -20,7 +20,8 @@ public class puntos : MonoBehaviour //Alvaro
     void Start()
     {
         //marcadorDePuntos = GetComponent<TextMeshProUGUI>(); //ya que no se encontro por si solo
-        conteoTiempo += Time.deltaTime; //llenamos el tiempo con a tiempo real
+        conteoTiempo = 0;
+        tiempoAnterior = -1; //Empieza en -1 para que sea diferente al tiempo nuevo por default
 	    mostrarTiempo(); //Hace un casteo del tiempo y lo imprime en un Text
 	    puntoCero = 0;
     }

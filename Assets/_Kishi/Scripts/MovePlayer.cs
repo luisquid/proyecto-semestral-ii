@@ -102,15 +102,29 @@ public class MovePlayer : MonoBehaviour //Kishi
 		//Si choca con las paredes, muere
 		if (collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
 		{
+			GameOver();//Carga la escena de gameover de manera Additive
+
 			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text)); //Guardamos partida
-			GameOver();
+			int recordTiempo = PlayerPrefs.GetInt("Record"); //Obtener el record de tiempo actual
+			//print(recordTiempo);
+			//Si superamos el highscore, entonces lo ponemos como nuevo record
+			if(tiempoTranscurrido > recordTiempo) 
+            {
+				GameManager.nuevoRecord = true; //Hubo nuevo record
+				PlayerPrefs.SetInt("Record", (int)tiempoTranscurrido);
+            }
+            else
+            {
+				GameManager.nuevoRecord = false; //No hubo nuevo record
+            }
+
+			Time.timeScale = 0f; //Detiene el tiempo
 		}
 	}
 
 	private void GameOver() //cargamos la escena de muerte
 	{
 		SceneManager.LoadScene("GameOver", LoadSceneMode.Additive); //Posible cambio a carga aditiva-----------------------------
-		Time.timeScale = 0f;
 	}
 
 	
