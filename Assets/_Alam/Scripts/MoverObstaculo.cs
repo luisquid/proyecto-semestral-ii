@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverObstaculo : MonoBehaviour//Alam
+public class MoverObstaculo : MonoBehaviour //Alam
 {
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo
 	

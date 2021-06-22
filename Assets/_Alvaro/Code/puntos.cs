@@ -12,7 +12,7 @@ public class puntos : MonoBehaviour //Alvaro
     public TextMeshProUGUI marcadorDePuntos;
     public  TextMeshProUGUI marcadorDeTiempo;
 
-    public static int puntoCero = 0; //Nunca cambiara el valor
+    public static int contadorPuntos = 0; //Nunca cambiara el valor
     [HideInInspector]
     public float conteoTiempo;
     int tiempoAnterior;
@@ -22,12 +22,13 @@ public class puntos : MonoBehaviour //Alvaro
         //marcadorDePuntos = GetComponent<TextMeshProUGUI>(); //ya que no se encontro por si solo
         conteoTiempo = 0;
         tiempoAnterior = -1; //Empieza en -1 para que sea diferente al tiempo nuevo por default
-	    mostrarTiempo(); //Hace un casteo del tiempo y lo imprime en un Text
-	    puntoCero = 0;
+	    MostrarTiempo(); //Hace un casteo del tiempo y lo imprime en un Text
+	    contadorPuntos = 0;
     }
 
     void Update()
     {
+        //ESTO PROBABLEMENTE DESAPAREZCA, SOLO SE SUMARÁN PUNTOS CON LA BASURA QUE COLECTAS
         if (!Evento.hayEvento)
         {
             conteoTiempo += Time.deltaTime;
@@ -36,21 +37,19 @@ public class puntos : MonoBehaviour //Alvaro
 
             if (tiempoNuevo != tiempoAnterior)
             {
-                marcadorDePuntos.text = puntoCero.ToString();
+                marcadorDePuntos.text = contadorPuntos.ToString();
                 marcadorDeTiempo.text = tiempoNuevo.ToString();
                 tiempoAnterior = tiempoNuevo;
-                puntoCero += 5;
+                contadorPuntos += 5;
             }
         }
 
     }//end Update
 
-    void mostrarTiempo()
+    void MostrarTiempo()
     {
         GetComponent<TextMeshProUGUI>().text = ((int)conteoTiempo).ToString();
-    }//end void
-
-
+    } //end void
 
 
 }//end class

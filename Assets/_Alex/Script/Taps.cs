@@ -44,7 +44,7 @@ public class Taps : MonoBehaviour  //Alexander
             tiempo = 100f; //Ponerlo en un tiempo distinto para que ya no se cumpla esta condición
             if (contadorTaps >= 20) //Si llega a la meta gana los puntos
             {
-                puntos.puntoCero += 50;
+                puntos.contadorPuntos += 50;
                 Fin();
             }
             Fin();

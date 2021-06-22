@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement; //Libreria para manejo de escenas
 
 public class MovePlayer : MonoBehaviour //Kishi
 {
-	
 	public Rigidbody2D rb;
 	public float velocidadMov;
 	public TextMeshProUGUI puntosTxt;
@@ -15,9 +14,9 @@ public class MovePlayer : MonoBehaviour //Kishi
 	public SpriteRenderer renderTortuga;
 
 	private int puntos;
-	private puntos contadorTiempo;
+	private puntos puntosManager;
 	private float tiempoTranscurrido;
-	private Vector2 vel_rb;
+	private Vector2 velRb;
 	
     void Start()
     {
@@ -31,7 +30,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 
         //print(GameManager.skin);
         puntos = PlayerPrefs.GetInt("Puntos");
-	    contadorTiempo = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
+	    puntosManager = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
 		renderTortuga = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
     }
@@ -39,26 +38,25 @@ public class MovePlayer : MonoBehaviour //Kishi
     // Update is called once per frame
     void Update()
 	{
-		vel_rb = rb.velocity;
-		tiempoTranscurrido = contadorTiempo.conteoTiempo;
+		velRb = rb.velocity;
+		tiempoTranscurrido = puntosManager.conteoTiempo;
 		anim.SetBool("Movimiento", false);
 
-
-		if (vel_rb.x > 0)
+        #region ANIMACIONES 
+        if (velRb.x > 0)
         {
-			anim.SetBool("Movimiento", true);
-			renderTortuga.flipX = false;
+			anim.Play("Derecha");
 		}
-		else if (vel_rb.x < 0)
+		else if (velRb.x < 0)
         {
-			anim.SetBool("Movimiento", true);
-			renderTortuga.flipX = true;
+			anim.Play("Izquierda");
 		}
 		else
         {
+			anim.Play("Idle");
 		}
-
-		if (tiempoTranscurrido >= 60f)
+        #endregion
+        if (tiempoTranscurrido >= 60f)
 		{
 			velocidadMov = 4;
 		}
@@ -71,11 +69,11 @@ public class MovePlayer : MonoBehaviour //Kishi
 		{
 			if (Input.GetKeyDown(KeyCode.D)) //Derecha con tecla
 			{
-				vel_rb.x = velocidadMov;
+				velRb.x = velocidadMov;
 			}
 			if (Input.GetKeyDown(KeyCode.A))//Izquierda con tecla
 			{
-				vel_rb.x = -velocidadMov;
+				velRb.x = -velocidadMov;
 			}
 			
 			if(Input.GetMouseButtonDown(0))
@@ -84,17 +82,17 @@ public class MovePlayer : MonoBehaviour //Kishi
 				Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition); //Referencia al tama;o de camara
 
 				if(worldPosition.x >= 0) 
-					vel_rb.x = velocidadMov; //Mover a la derecha
+					velRb.x = velocidadMov; //Mover a la derecha
 				else
-					vel_rb.x = -velocidadMov; //Mover a la Izquierda
+					velRb.x = -velocidadMov; //Mover a la Izquierda
 			}
 		}
         else
         {
-			vel_rb = new Vector2(0, 0);
+			velRb = new Vector2(0, 0);
 		}
 
-		rb.velocity = vel_rb; 
+		rb.velocity = velRb; 
 	}
 
     private void OnTriggerEnter2D(Collider2D collisionInfo)
