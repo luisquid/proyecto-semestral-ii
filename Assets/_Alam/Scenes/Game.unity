@@ -1007,9 +1007,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64d70eb0d273d14ebba92fbb10a795b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadExtra: 0.5
-  velocidadMaxima: 5.1
-  tiempoExtra: 30
+  velocidadInicial: 1.5
+  velExtraPorSegundo: 0.02
+  velocidadMaxima: 5
 --- !u!1 &1335714779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,42 +1942,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2833034281851060352, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2833034281851060352, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2833034281851060352, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 8301189815969661632, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8301189815969661644, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8301189815969661644, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8301189815969661644, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1083789681626265551, guid: 359eaa7ca6b912e4f832dfeffe6d073b,
-        type: 3}
     - target: {fileID: 8301189815969661645, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
         type: 3}
       propertyPath: m_RootOrder
@@ -1991,7 +1960,7 @@ PrefabInstance:
     - target: {fileID: 8301189815969661645, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8301189815969661645, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
         type: 3}
@@ -2038,10 +2007,5 @@ PrefabInstance:
       propertyPath: puntosTxt
       value: 
       objectReference: {fileID: 292685561}
-    - target: {fileID: 8301189815969661647, guid: 17cbb1c6ba15b054a846a9bae4ee6983,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cbb1c6ba15b054a846a9bae4ee6983, type: 3}
