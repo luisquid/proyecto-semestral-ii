@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: adf26ecf1ee65bd4ab4f017f57c065f9
+guid: e0554866f8315b549a4b12c504548315
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6074964786627806593
-    second: _Globo-Sheet_0
+      213: -3950895377174056957
+    second: SharkSheet_0
   - first:
-      213: -5081763103181990747
-    second: _Globo-Sheet_1
+      213: -8044499293445390266
+    second: SharkSheet_1
+  - first:
+      213: 5738012821409743733
+    second: SharkSheet_2
+  - first:
+      213: 3679243347221728354
+    second: SharkSheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Globo-Sheet_0
+      name: SharkSheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 58
-        height: 55
+        x: 2
+        y: 53
+        width: 296
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7afa0e86b361bba0800000000000000
-      internalID: -6074964786627806593
+      spriteID: 300bec256999b29c0800000000000000
+      internalID: -3950895377174056957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Globo-Sheet_1
+      name: SharkSheet_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 4
-        width: 58
-        height: 55
+        x: 304
+        y: 62
+        width: 283
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a4962ac163f979b0800000000000000
-      internalID: -5081763103181990747
+      spriteID: 6408e42a3823c5090800000000000000
+      internalID: -8044499293445390266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkSheet_2
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 55
+        width: 296
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573c3c0824481af40800000000000000
+      internalID: 5738012821409743733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkSheet_3
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 62
+        width: 283
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26cce51b45c4f0330800000000000000
+      internalID: 3679243347221728354
       vertices: []
       indices: 
       edges: []
@@ -161,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: df489da301df42e4192f8fdac28e5794
+    spriteID: 04cde7ce3d5a6594c823be1cfda80255
     internalID: 0
     vertices: []
     indices: 

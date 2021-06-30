@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Kishi/Scenes/Store.unity
     guid: d3ae67e3f81dca84493e4577a694acd2
   - enabled: 1
-    path: Assets/_Alam/Scenes/Game.unity
+    path: Assets/__Main/Scenes/Game.unity
     guid: 645bad70c60a1634eb136d1437214aab
   - enabled: 1
     path: Assets/_Kishi/Scenes/Credits.unity
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/_Alam/Scenes/Evento.unity
     guid: 245f0a9b76d6ced4eb519a5d778edefc
   - enabled: 1
-    path: Assets/_Kishi/Scenes/GameOver.unity
+    path: Assets/__Main/Scenes/GameOver.unity
     guid: 50ff8ad60afcd7b43b199d7853c59f25
   m_configObjects: {}

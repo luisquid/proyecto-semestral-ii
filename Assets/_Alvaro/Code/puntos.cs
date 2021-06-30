@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; //libreria para agregar GUI
 
-
 public class puntos : MonoBehaviour //Alvaro
 {
     /*
@@ -37,11 +36,14 @@ public class puntos : MonoBehaviour //Alvaro
 
             if (tiempoNuevo != tiempoAnterior)
             {
-                marcadorDePuntos.text = contadorPuntos.ToString();
                 marcadorDeTiempo.text = tiempoNuevo.ToString();
                 tiempoAnterior = tiempoNuevo;
-                contadorPuntos += 5;
+                //contadorPuntos += 5;
             }
+
+            if(contadorPuntos != int.Parse(marcadorDePuntos.text) )
+                marcadorDePuntos.text = contadorPuntos.ToString();
+
         }
 
     }//end Update

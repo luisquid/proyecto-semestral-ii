@@ -4,23 +4,26 @@ using UnityEngine;
 using TMPro; //libreria para agregar GUI
 using UnityEngine.SceneManagement; //Libreria para manejo de escenas 
 
-public class MovePlayer : MonoBehaviour //Kishi
+public class MovePlayer : MonoBehaviour
 {
-	public Rigidbody2D rb;
 	public float velocidadMov;
 	public TextMeshProUGUI puntosTxt;
 	public Sprite defaultSkin;
-	public Animator anim;
-	public SpriteRenderer renderTortuga;
 
-	private int puntos;
+	[SerializeField]
+	private GameObject gameOverPanel;
+	private Rigidbody2D rb;
+	private Vector2 velRb;
+	private SpriteRenderer renderTortuga;
+	private Animator anim;
+	private Camera cam;
 	private puntos puntosManager;
 	private float tiempoTranscurrido;
-	private Vector2 velRb;
+	private int puntos;
 	
     void Start()
     {
-		//Si no tiene una skin elegida, le pone la default
+        //Si no tiene una skin elegida, le pone la default
         /*#region AGREGAR SKIN AL JUGADOR   
         if (GameManager.skin != null) 
 			GetComponent<SpriteRenderer>().sprite = GameManager.skin; 
@@ -29,10 +32,16 @@ public class MovePlayer : MonoBehaviour //Kishi
         #endregion*/
 
         //print(GameManager.skin);
-        puntos = PlayerPrefs.GetInt("Puntos");
-	    puntosManager = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
+        #region GET COMPONENTS
+        rb = GetComponent<Rigidbody2D>();
 		renderTortuga = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
+	    puntosManager = GameObject.FindGameObjectWithTag("Contador").GetComponent<puntos>();
+		cam = Camera.main;
+		#endregion
+
+		puntos = PlayerPrefs.GetInt("Puntos");
+		gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,14 +65,16 @@ public class MovePlayer : MonoBehaviour //Kishi
 			anim.Play("Idle");
 		}
         #endregion
-        if (tiempoTranscurrido >= 60f)
-		{
-			velocidadMov = 4;
-		}
-		else if (tiempoTranscurrido >= 150f)
-		{
-			velocidadMov = 5;
-		}	
+
+
+  //      if (tiempoTranscurrido >= 60f)
+		//{
+		//	velocidadMov = 4;
+		//}
+		//else if (tiempoTranscurrido >= 150f)
+		//{
+		//	velocidadMov = 5;
+		//}	
 
 		if (!Evento.hayEvento) //False
 		{
@@ -79,7 +90,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 			if(Input.GetMouseButtonDown(0))
             {
 				Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y); //Guardamos el vector del mouse
-				Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition); //Referencia al tama;o de camara
+				Vector2 worldPosition = cam.ScreenToWorldPoint(screenPosition); //Referencia al tama;o de camara
 
 				if(worldPosition.x >= 0) 
 					velRb.x = velocidadMov; //Mover a la derecha
@@ -89,7 +100,7 @@ public class MovePlayer : MonoBehaviour //Kishi
 		}
         else
         {
-			velRb = new Vector2(0, 0);
+			velRb = Vector2.zero;
 		}
 
 		rb.velocity = velRb; 
@@ -97,10 +108,10 @@ public class MovePlayer : MonoBehaviour //Kishi
 
     private void OnTriggerEnter2D(Collider2D collisionInfo)
     {
-		//Si choca con las paredes, muere
+		//Si choca con las paredes, pierde
 		if (collisionInfo.gameObject.CompareTag("Wall") || collisionInfo.gameObject.CompareTag("Obstaculo"))
 		{
-			GameOver();//Carga la escena de gameover de manera Additive
+			gameOverPanel.SetActive(true); //Activar pantalla de game over
 
 			PlayerPrefs.SetInt("Puntos", puntos + int.Parse(puntosTxt.text)); //Guardamos partida
 			int recordTiempo = PlayerPrefs.GetInt("Record"); //Obtener el record de tiempo actual
@@ -119,13 +130,6 @@ public class MovePlayer : MonoBehaviour //Kishi
 			Time.timeScale = 0f; //Detiene el tiempo
 		}
 	}
-
-	private void GameOver() //cargamos la escena de muerte
-	{
-		SceneManager.LoadScene("GameOver", LoadSceneMode.Additive); //Posible cambio a carga aditiva-----------------------------
-	}
-
-	
 
 }//end Class
 
